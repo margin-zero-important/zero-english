@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Nippo';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 200 700;
+  src:
+    url('/public/fonts/nippo/Nippo-Variable.woff2') format('woff2'),
+    url('/public/fonts/nippo/Nippo-Variable.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300 900;
+  src:
+    url('/public/fonts/satoshi/Satoshi-Variable.woff2') format('woff2'),
+    url('/public/fonts/satoshi/Satoshi-Variable.woff') format('woff');
+}
+
+:root {
+  --font-Nippo: 'Nippo';
+  --font-Satoshi: 'Satoshi';
+}
