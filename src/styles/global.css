@@ -1,3 +1,15 @@
+/* ==================================================
+   DESIGN TOKENS
+   --------------------------------------------------
+   1. Tipografías
+   2. Espaciado
+   3. Radios
+   4. Colores base
+   5. Colores semánticos
+   6. Tema claro
+   7. Tema oscuro
+   ================================================== */
+
 @font-face {
   font-family: 'Nippo';
   font-display: swap;
@@ -19,6 +31,186 @@
 }
 
 :root {
-  --font-Nippo: 'Nippo';
-  --font-Satoshi: 'Satoshi';
+  /* =========================================
+     TIPOGRAFÍAS
+     ========================================= */
+
+  --font-heading: 'Nippo';
+  --font-body: 'Satoshi';
+
+  /* Escala tipográfica */
+
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-md: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 2rem; /* 32px */
+  --text-4xl: 3rem; /* 48px */
+
+  /* Line-height */
+
+  --leading-tight: 1.2; /* Títulos */
+  --leading-snug: 1.35; /* Subtítulos */
+  --leading-normal: 1.5; /* UI: botones, inputs, labels... */
+  --leading-relaxed: 1.65; /* Párrafos y artículos */
+
+  /* =========================================
+     ESPACIADO
+     ========================================= */
+
+  --space-2xs: 0.25rem; /* 4px */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 0.75rem; /* 12px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+
+  /* =========================================
+     RADIOS DE BORDE
+     ========================================= */
+
+  --radius-xs: 0.25rem; /* 4px */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-full: 9999px;
+
+  /* =========================================
+     COLORES BASE
+     ========================================= */
+
+  --color-primary: hsl(270 50% 40%);
+  --color-accent: hsl(88 78% 48%);
+
+  --color-white: hsl(0 0% 100%);
+  --color-black: hsl(0 0% 0%);
+
+  /* Neutros derivados del color principal */
+
+  --color-neutral-dark: hsl(from var(--color-primary) h 37% 6%);
+  --color-neutral-mid: hsl(from var(--color-primary) h 15% 40%);
+  --color-neutral-light: hsl(from var(--color-primary) h 36% 95%);
+  --color-neutral-lightest: hsl(from var(--color-primary) h 40% 98%);
+
+  /* =========================================
+     COLORES SEMÁNTICOS
+     ========================================= */
+
+  --color-semantic-info-base: hsl(217 91% 38%);
+  --color-semantic-success-base: hsl(160 84% 25%);
+  --color-semantic-warning-base: hsl(38 92% 30%);
+  --color-semantic-error-base: hsl(0 84% 40%);
+
+  /* Variables semánticas*/
+
+  --color-semantic-info: var(--color-semantic-info-base);
+  --color-semantic-success: var(--color-semantic-success-base);
+  --color-semantic-warning: var(--color-semantic-warning-base);
+  --color-semantic-error: var(--color-semantic-error-base);
+
+  /* =========================================
+     TEMA CLARO
+     ========================================= */
+
+  /* Fondos */
+
+  --color-bg-main: var(--color-neutral-lightest);
+  --color-bg-navbar: var(--color-white);
+  --color-bg-card: var(--color-white);
+
+  /* Textos */
+
+  --text-primary: var(--color-neutral-dark);
+  --text-secondary: var(--color-neutral-mid);
+
+  /* Bordes */
+
+  --border: hsl(from var(--color-primary) h 26% 85%);
+
+  /* Sombras */
+
+  --shadow: 0 10px 30px hsla(from var(--color-primary) h 37% 12% / 0.08);
+
+  /* Información */
+
+  --color-bg-info: color-mix(in srgb, var(--color-semantic-info) 12%, var(--color-bg-card));
+  --color-border-info: color-mix(in srgb, var(--color-semantic-info) 30%, transparent);
+  --text-info: var(--color-semantic-info);
+
+  /* Éxito */
+
+  --color-bg-success: color-mix(in srgb, var(--color-semantic-success) 12%, var(--color-bg-card));
+  --color-border-success: color-mix(in srgb, var(--color-semantic-success) 30%, transparent);
+  --text-success: var(--color-semantic-success);
+
+  /* Advertencia */
+
+  --color-bg-warning: color-mix(in srgb, var(--color-semantic-warning) 12%, var(--color-bg-card));
+  --color-border-warning: color-mix(in srgb, var(--color-semantic-warning) 30%, transparent);
+  --text-warning: var(--color-semantic-warning);
+
+  /* Error */
+
+  --color-bg-error: color-mix(in srgb, var(--color-semantic-error) 12%, var(--color-bg-card));
+  --color-border-error: color-mix(in srgb, var(--color-semantic-error) 30%, transparent);
+  --text-error: var(--color-semantic-error);
+}
+
+/* =========================================
+   TEMA OSCURO
+   ========================================= */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Fondos */
+
+    --color-bg-main: var(--color-neutral-dark);
+    --color-bg-navbar: hsl(from var(--color-primary) h 33% 11%);
+    --color-bg-card: hsl(from var(--color-primary) h 33% 11%);
+
+    /* Texto */
+
+    --text-primary: hsl(from var(--color-primary) h 18% 82%);
+    --text-secondary: var(--color-neutral-light);
+
+    /* Bordes */
+
+    --border: hsl(from var(--color-primary) h 27% 25%);
+
+    /* Sombras */
+
+    --shadow: 0 10px 30px hsla(from var(--color-primary) h 55% 30% / 0.45);
+
+    /* Semánticos adaptados */
+
+    --color-semantic-info: hsl(from var(--color-semantic-info-base) h s 75%);
+    --color-semantic-success: hsl(from var(--color-semantic-success-base) h s 70%);
+    --color-semantic-warning: hsl(from var(--color-semantic-warning-base) h s 75%);
+    --color-semantic-error: hsl(from var(--color-semantic-error-base) h s 72%);
+
+    /* Información */
+
+    --color-bg-info: color-mix(in srgb, var(--color-semantic-info) 15%, var(--color-bg-card));
+    --color-border-info: color-mix(in srgb, var(--color-semantic-info) 35%, transparent);
+
+    /* Éxito */
+
+    --color-bg-success: color-mix(in srgb, var(--color-semantic-success) 15%, var(--color-bg-card));
+    --color-border-success: color-mix(in srgb, var(--color-semantic-success) 35%, transparent);
+
+    /* Advertencia */
+
+    --color-bg-warning: color-mix(in srgb, var(--color-semantic-warning) 15%, var(--color-bg-card));
+    --color-border-warning: color-mix(in srgb, var(--color-semantic-warning) 35%, transparent);
+
+    /* Error */
+
+    --color-bg-error: color-mix(in srgb, var(--color-semantic-error) 15%, var(--color-bg-card));
+    --color-border-error: color-mix(in srgb, var(--color-semantic-error) 35%, transparent);
+  }
 }
